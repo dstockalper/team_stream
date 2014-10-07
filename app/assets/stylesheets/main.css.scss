@@ -1,0 +1,40 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about {
+	height: 900px;
+}
+
+#stats{
+	height: 900px;
+}
+
+#tweets {
+	height: 900px;
+}
+
+#contact {
+	height: 900px;
+}
+
+.intro-section {
+	height: 500px;
+	background-color: #1d2b64;
+	background-image:linear-gradient(
+			to top right, 
+			#0e153a, #1a2980
+		);
+
+}
+.container .hero {
+	margin-top: 100px;
+	color: white;
+}
+.hero h2{
+	font-size: 50px;
+}
+.section-titles{
+	padding-top: 50px;
+}
+
