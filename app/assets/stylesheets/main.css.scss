@@ -2,8 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$background: #1c2336;
+$emphasis: white;
+$shade: #335563;
+$body: #335563;
+$subtitles: #28B0AD;
+
+body{
+	font-size: 16px;
+}
+.navbar a {
+	font-family: Oswald;
+	text-transform: uppercase;
+}
 #about {
 	height: 900px;
+	background-color: rgba(143, 160, 176, 0.4);
 }
 
 #stats{
@@ -19,7 +33,7 @@
 }
 
 .intro-section {
-	height: 500px;
+	height: 400px;
 	background-color: #1d2b64;
 	background-image:linear-gradient(
 			to top right, 
@@ -32,9 +46,89 @@
 	color: white;
 }
 .hero h2{
-	font-size: 50px;
+	font-size: 3.5em;
+}
+.sign{
+	margin: 70px 0;
+	font-family: 'Oswald', sans-serif;
+	font-size: 5em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	display: block;
+	color: $emphasis;
+	text-align: center;
+	font-style: italic;
+	-webkit-transform: rotate(-9deg);
+      transform: rotate(-9deg);
+
+      text-shadow:
+        //0 0 .5em rgba(255,255,255,0.3),
+        0 .005em $shade,
+        .005em 0 $shade,
+        .005em .010em $shade,
+        .010em .005em $shade,
+        .010em .015em $shade,
+        .015em .010em $shade,
+        .015em .020em $shade,
+        .020em .015em $shade,
+        .020em .025em $shade,
+        .025em .020em $shade,
+        .025em .030em $shade,
+        .030em .025em $shade,
+        .030em .035em $shade,
+        .035em .030em $shade,
+        .035em .040em $shade,
+        .040em .035em $shade,
+        .040em .045em $shade,
+        .045em .040em $shade,
+        .045em .050em $shade,
+        .050em .045em $shade,
+        .050em .055em $shade,
+        .055em .050em $shade,
+        .055em .060em $shade,
+        .060em .055em $shade,
+        .060em .065em $shade,
+        .065em .060em $shade,
+        .065em .070em $shade,
+        .070em .065em $shade,
+        .070em .075em $shade,
+        .075em .070em $shade,
+        .075em .080em $shade,
+        .080em .075em $shade,
+        .080em .085em $shade,
+        .085em .080em $shade,
+        .085em .090em $shade,
+        .090em .085em $shade,
+        .090em .095em $shade,
+        .095em .090em $shade,
+        .095em .100em $shade,
+        .100em .095em $shade,
+        .100em .105em $shade,
+        .105em .100em $shade,
+        .105em .110em $shade,
+        .110em .105em $shade;
+    -webkit-transform: rotate(-9deg);
+    transform: rotate(-9deg);
+    
 }
 .section-titles{
 	padding-top: 50px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.about {
+	padding-top: 40px;
+}
+
+.about h3{
+	font-family: Oswald; 
+	font-size: 2em;
+	font-weight: 300;
+	text-align: left;
+	color: $subtitles;
+	text-transform: uppercase;
+	margin-bottom: 20px;
 }
 

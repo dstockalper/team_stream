@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery.typer.js
+//= require scroll.js
 //= require_tree .
 
