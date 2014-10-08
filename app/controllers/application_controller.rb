@@ -29,9 +29,9 @@ Dotenv.load
 		@tweet = Tweet.create(
 				tweet_id: msg.attrs[:id], 
 				username: msg.attrs[:user][:name], 
-				body: msg.text
-				# sentiment: result["type"],
-				# score: result["score"]
+				body: msg.text,
+				sentiment: result["type"],
+				score: result["score"]
 				)
 		@tweet.save
 
