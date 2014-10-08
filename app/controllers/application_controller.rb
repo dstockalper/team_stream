@@ -8,7 +8,7 @@ require 'dotenv'
 
 Dotenv.load 
 
-def get_tweets
+
 
 	client = Twitter::Streaming::Client.new do |config|
 	  config.consumer_key        = ENV["TWITTER_CONSUMER"] # where CONSUMER_KEY is defined in your .env file
@@ -19,17 +19,14 @@ def get_tweets
 
 	topics = "football"
 	
-	stored_tweets = []
 	tweets_stored = 0
 
-	client.filter(:track => topics) do |tweet|
-		if tweet.lang == 'en'
+	client.filter(:track => topics) do |msg|
+		if msg.lang == 'en'
 		tweets_stored += 1
-		stored_tweets << {
-			username: tweet.attrs[:user][:name], 
-			body: 	tweet.text,
-			tweet_id: 	tweet.attrs[:id]
-		}
+		
+		@tweet = Tweet.create(tweet_id: msg.attrs[:id], username: msg.attrs[:user][:name], body: msg.text )
+		@tweet.save
 
 		puts "#{tweets_stored} tweets gathered"
 
@@ -38,7 +35,7 @@ def get_tweets
 		break if tweets_stored >= 3 # stops the stream after 100 tweets
 	end
 
-end
+
 
 
 
