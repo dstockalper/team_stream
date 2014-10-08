@@ -43,11 +43,6 @@ Dotenv.load
 		break if tweets_stored >= 3 # stops the stream after 100 tweets
 	end
 
-	
-
-	
-
-	
 
 
 
