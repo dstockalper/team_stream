@@ -15,6 +15,7 @@ Dotenv.load
 	  config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"] # from .env
 	end
 
+
 	topics = "ebola"
 	
 	tweets_stored = 0
