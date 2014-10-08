@@ -17,5 +17,6 @@
 //= require jquery.typer.js
 //= require amcharts.js
 //= require serial.js
+//= require gauge.js
 //= require_tree .
 

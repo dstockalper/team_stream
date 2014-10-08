@@ -23,7 +23,7 @@ function generatechartData() {
 }
 
 
-var chart = AmCharts.makeChart("chartdiv", {
+var chart_line = AmCharts.makeChart("chartdiv-line", {
     "theme": "none",	
     "type": "serial",
 		"autoMargins": false,
@@ -60,11 +60,11 @@ var chart = AmCharts.makeChart("chartdiv", {
     }
 });
 
-chart.addListener("dataUpdated", zoomChart);
+chart_line.addListener("dataUpdated", zoomChart);
 //zoomChart();
 
 function zoomChart(){
-  if(chart.zoomToIndexes){
-    chart.zoomToIndexes(130, chartData.length - 1);
+  if(chart_line.zoomToIndexes){
+    chart_line.zoomToIndexes(130, chartData.length - 1);
   }
 }
