@@ -2,9 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-require 'twitter'
-require 'pry'
-require 'dotenv'
+
 
 Dotenv.load 
 
@@ -16,6 +14,7 @@ Dotenv.load
 	  config.access_token        = ENV["TWITTER_TOKEN"] # from .env
 	  config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"] # from .env
 	end
+
 
 	topics = "ebola"
 	
