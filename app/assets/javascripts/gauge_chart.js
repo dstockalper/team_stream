@@ -8,20 +8,21 @@ var chart_gauge = AmCharts.makeChart("chartdiv-gauge", {
          "valueInterval":.5,
         "bands": [{
             "color": "#cc4748",
-            "endValue": .4,
-            "startValue": 0
+            "endValue": 0,
+            "startValue": -1
         }, {
             "color": "#fdd400",
-            "endValue": .6,
-            "startValue": .4
+            "endValue": .5,
+            "startValue": -.5
         }, {
             "color": "#84b761",
             "endValue": 1,
             "innerRadius": "95%",
-            "startValue": .6
+            "startValue": .5
         }],
         "bottomText": "0 km/h",
         "bottomTextYOffset": -1,
+        "startValue": -1,
         "endValue": 1
     }],
     "arrows": [{}]
