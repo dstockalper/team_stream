@@ -93,9 +93,9 @@
 
 // <!-- AJAX call ================================================ -->
 
-	// <script type="text/javascript">
+	<script type="text/javascript">
 
-	$('#proxy').click(function(){
+	$(document).ready(function(){
 		
 		var request = $.ajax({
 		  url: "/get_data",
@@ -104,12 +104,92 @@
 
 		request.done(function(data){
 			
-			$('#ajax_div').text(data[41].score)
+			// CHART****************************************************
+			var chartData = generatechartData();
+
+			function generatechartData() {
+			    var chartData = [];
+			    var firstDate = new Date();
+			    firstDate.setDate(firstDate.getDate() - 1);
+			    console.log(firstDate);
+			    for (var i = 0; i < data.length; i++) {
+			        // we create date objects here. In your data, you can have date strings
+			        // and then set format of your dates using chart.dataDateFormat property,
+			        // however when possible, use date objects, as this will speed up chart rendering.
+			        var newDate = new Date(firstDate);
+			        newDate.setDate(newDate.getDate() + i);
+
+			        var time_of_tweet = data[i].created_at;
+			        var sentiment_score = data[i].score;
+			        console.log("created at: " + time_of_tweet);
+			        console.log("score: " + sentiment_score);
+
+
+			        chartData.push({
+			            date: time_of_tweet,
+			            visits: sentiment_score
+			        });
+			    }
+			    return chartData;
+			}
+
+
+			var chart_line = AmCharts.makeChart("chartdiv-line", {
+			    "theme": "none",	
+			    "type": "serial",
+					"autoMargins": false,
+					"marginLeft":8,
+					"marginRight":8,
+					"marginTop":10,
+					"marginBottom":26,
+			    "pathToImages": "http://www.amcharts.com/lib/3/images/",
+			    "dataProvider": chartData,
+			    "valueAxes": [{
+			        "axisAlpha": 0,
+			        "inside": true
+			    }],
+			    "graphs": [{
+			        "balloonText": "[[category]]<br><b>value: [[value]]</b>",
+			        "bullet": "round",
+			        "bulletBorderAlpha": 1,
+			        "bulletBorderColor": "#FFFFFF",
+			        "hideBulletsCount": 50,
+			        "lineThickness": 2,
+			        "lineColor": "#fdd400",
+			        "negativeLineColor": "#67b7dc",
+			        "valueField": "visits"
+			    }],
+			    "chartScrollbar": {
+			    },
+			    "chartCursor": {
+			    },
+			    "categoryField": "date",
+			    "categoryAxis": {
+			    	"minPeriod": "mm",
+			        "parseDates": true,
+			        "axisAlpha": 0,
+			        "minHorizontalGap":60
+			    }
+			});
+
+			chart_line.addListener("dataUpdated", zoomChart);
+			//zoomChart();
+
+			function zoomChart(){
+			  if(chart_line.zoomToIndexes){
+			    chart_line.zoomToIndexes(130, chartData.length - 1);
+			  }
+			}
+
+			// CHART****************************************************
+
+
+			$('#ajax_div').text(data[59].score)
 
 
 		});
 	})
 
-	// </script>
+	</script>
 
 // <!-- AJAX call ================================================ -->
