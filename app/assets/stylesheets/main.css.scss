@@ -7,6 +7,9 @@ $emphasis: white;
 $shade: #335563;
 $body: #335563;
 $subtitles: #28B0AD;
+$team-color-b: #AF1E2C;
+$team-color-g: #E6BE8A;
+$light-gray-blue: rgba(143, 160, 176, 0.4);
 
 body{
 	font-size: 16px;
@@ -16,8 +19,8 @@ body{
 	text-transform: uppercase;
 }
 #about {
-	height: 900px;
-	background-color: rgba(143, 160, 176, 0.4);
+	height: 1200px;
+	background-color: $light-gray-blue;
 }
 
 #stats{
@@ -33,20 +36,68 @@ body{
 }
 
 .intro-section {
-	height: 400px;
-	background-color: #1d2b64;
-	background-image:linear-gradient(
-			to top right, 
-			#0e153a, #1a2980
-		);
+	height: 1200px;
+	background-color: $emphasis;
+	
 
 }
 .container .hero {
 	margin-top: 100px;
-	color: white;
+	color: $team-color-b;
 }
+
+.intro-header{
+    color: $shade;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 40px;
+    margin-top: 0px;
+    width: 110%;
+    margin-left: -15px;
+    padding: 10px;
+}
+
+.main-team {
+    width: 100%;
+}
+
+.logo {
+    width: 250px;
+    height: 145px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero h2{
 	font-size: 3.5em;
+}
+
+.charts{
+    margin-top: 100px;
+    color: white;
+}
+
+.odd{
+    background-color: $background;
+    height: 300px;
+        border: 5px solid white;
+
+}
+
+.even{
+    background-color: $subtitles;
+    height: 300px;
+        border: 5px solid white;
+
+}
+
+
+.chart-info{
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    font-size: 2em;
+    padding-top: 75px;
 }
 .sign{
 	margin: 70px 0;
