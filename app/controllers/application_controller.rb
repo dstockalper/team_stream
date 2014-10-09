@@ -16,7 +16,7 @@ Dotenv.load
 	end
 
 
-	topics = "ebola"
+	topics = "49ers"
 	
 	tweets_stored = 0
 
@@ -40,7 +40,7 @@ Dotenv.load
 
 		end
 
-		break if tweets_stored >= 50 # stops the stream after 100 tweets
+		break if tweets_stored >= 5 # stops the stream after 100 tweets
 	end
 
 

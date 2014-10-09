@@ -17,9 +17,9 @@
 //= require jquery.typer.js
 //= require scroll.js
 //= require ajax_call.js
+//= require my_app.js
 //= require amcharts.js
 //= require serial.js
 //= require gauge.js
-
 //= require_tree .
 
