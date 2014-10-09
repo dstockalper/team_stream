@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// Load images into an array
 	var ui_logos = [
-	"assets/49ers.gif",
+	"/49ers.gif",
 	"http://content.sportslogos.net/logos/7/161/thumbs/9ebzja2zfeigaziee8y605aqp.gif",
 	"http://content.sportslogos.net/logos/7/162/thumbs/857.gif",
 	"http://content.sportslogos.net/logos/7/163/thumbs/g9mgk6x3ge26t44cccm9oq1vl.gif",
