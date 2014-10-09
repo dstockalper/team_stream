@@ -135,6 +135,7 @@ $(document).ready(function(){
 			        "axisThickness":1,
 			         "axisAlpha":0.2,
 			         "tickAlpha":0.2,
+			         "bottomTextColor" : "#fff",
 			         "valueInterval":.5,
 			        "bands": [{
 			            "color": "#cc4748",
@@ -155,7 +156,9 @@ $(document).ready(function(){
 			        "startValue": -1,
 			        "endValue": 1
 			    }],
-			    "arrows": [{}]
+			    "arrows": [{
+			    	"color" : "#fff"
+			    }]
 			});
 
 
