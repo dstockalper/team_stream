@@ -91,9 +91,7 @@
 	});
 </script>
 
-// <!-- AJAX call ================================================ -->
-
-	// <script type="text/javascript">
+<script type="text/javascript">
 
 	$('#proxy').click(function(){
 		
@@ -103,13 +101,12 @@
 		});
 
 		request.done(function(data){
-			
-			$('#ajax_div').text(data[41].score)
+			console.log(data)
+			$('#ajax_div').text(data[5].score)
 
 
 		});
 	})
 
-	// </script>
+</script>
 
-// <!-- AJAX call ================================================ -->
