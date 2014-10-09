@@ -52,6 +52,13 @@
 				<div id="chartdiv-line"></div>
 			</div>
 			
+			
+			
+		</div>
+	</div><!-- end of container -->
+</div> <!-- end of intro-section -->
+
+			
 
 
 
@@ -60,9 +67,11 @@
 </div> <!-- end of intro-section -->
 
 <section>
+
 	<button id="proxy">Tweet Score with Proxy </button>
 	<div id="ajax_div"></div>
 </section>
+
 
 
 
@@ -129,12 +138,51 @@
 
 
 
+
   <!-- AJAX call ================================================ -->
+
 
 	<script type="text/javascript">
 
 	$(document).ready(function(){
 		
+		// Make empty gauge chart on page load, so user doesn't wait for setInterval before seeing anything
+				var chart_gauge = AmCharts.makeChart("chartdiv-gauge", {
+			    "type": "gauge",
+				"theme": "none",    
+			    "axes": [{
+			        "axisThickness":1,
+			         "axisAlpha":0.2,
+			         "tickAlpha":0.2,
+			         "valueInterval":.5,
+			        "bands": [{
+			            "color": "#cc4748",
+			            "endValue": 0,
+			            "startValue": -1
+			        }, {
+			            "color": "#fdd400",
+			            "endValue": .2,
+			            "startValue": -.2
+			        }, {
+			            "color": "#84b761",
+			            "endValue": 1,
+			            "innerRadius": "95%",
+			            "startValue": .2
+			        }],
+			        "bottomText": "sentiment",
+			        "bottomTextYOffset": -1,
+			        "startValue": -1,
+			        "endValue": 1
+			    }],
+			    "arrows": [{}]
+			});
+		fire_ajax_line_chart();
+		setInterval(fire_ajax_gauge_chart, 2000);
+	})
+
+	function fire_ajax_line_chart(){
+
+		// Start ajax call
 		var request = $.ajax({
 		  url: "/get_data",
 		 	dataType: "json"
@@ -145,33 +193,31 @@
 			$('#ajax_div').text(data[5].score)
 
 			
-			// CHART****************************************************
+			// LINE CHART START****************************************************
 			var chartData = generatechartData();
 
 			function generatechartData() {
 			    var chartData = [];
-			    var firstDate = new Date();
-			    firstDate.setDate(firstDate.getDate() - 1);
-			    console.log(firstDate);
+			    // var firstDate = new Date();
+			    // firstDate.setDate(firstDate.getDate() - 1);
 			    for (var i = 0; i < data.length; i++) {
 			        // we create date objects here. In your data, you can have date strings
 			        // and then set format of your dates using chart.dataDateFormat property,
 			        // however when possible, use date objects, as this will speed up chart rendering.
-			        var newDate = new Date(firstDate);
-			        newDate.setDate(newDate.getDate() + i);
+			        // var newDate = new Date(firstDate);
+			        // newDate.setDate(newDate.getDate() + i);
 
 			        var time_of_tweet = data[i].created_at;
 			        var sentiment_score = data[i].score;
-			        console.log("created at: " + time_of_tweet);
-			        console.log("score: " + sentiment_score);
-
 
 			        chartData.push({
 			            date: time_of_tweet,
 			            visits: sentiment_score
 			        });
+
 			    }
 			    return chartData;
+
 			}
 
 
@@ -205,6 +251,7 @@
 			    "chartCursor": {
 			    },
 			    "categoryField": "date",
+			    "dataDateFormat": "YYYY-MM-DD HH:NN",
 			    "categoryAxis": {
 			    	"minPeriod": "mm",
 			        "parseDates": true,
@@ -222,13 +269,75 @@
 			  }
 			}
 
-			// CHART****************************************************
+			// LINE CHART END****************************************************		
+
+		}); //end of ajax call
+
+	} //end of fire_ajax_line_chart
 
 
-			$('#ajax_div').text(data[59].score)
+
+	function fire_ajax_gauge_chart(){
+		// Create gauge chart template
+		var chart_gauge = AmCharts.makeChart("chartdiv-gauge", {
+			    "type": "gauge",
+				"theme": "none",    
+			    "axes": [{
+			        "axisThickness":1,
+			         "axisAlpha":0.2,
+			         "tickAlpha":0.2,
+			         "valueInterval":.5,
+			        "bands": [{
+			            "color": "#cc4748",
+			            "endValue": 0,
+			            "startValue": -1
+			        }, {
+			            "color": "#fdd400",
+			            "endValue": .2,
+			            "startValue": -.2
+			        }, {
+			            "color": "#84b761",
+			            "endValue": 1,
+			            "innerRadius": "95%",
+			            "startValue": .2
+			        }],
+			        "bottomText": "sentiment",
+			        "bottomTextYOffset": -1,
+			        "startValue": -1,
+			        "endValue": 1
+			    }],
+			    "arrows": [{}]
+			});
 
 
+		var request = $.ajax({
+		  url: "/get_data",
+		 	dataType: "json"
 		});
-	})
 
+		request.done(function(data){
+
+			// GAUGE CHART START *****************************************************
+			function getMostRecentTweet() {
+			    var value = data[data.length-1].score;
+			    var display_sentiment = data[data.length-1].sentiment
+			    chart_gauge.arrows[0].setValue(value);
+			    chart_gauge.axes[0].setBottomText(display_sentiment + " sentiment");
+			}
+
+			getMostRecentTweet();
+			// GAUGE CHART END*****************************************************			
+
+		}); //end of ajax call
+
+	} //end of fire ajax_gauge_chart
+
+
+	</script>
+
+
+
+
+=======
 </script>
+
