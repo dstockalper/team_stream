@@ -44,3 +44,7 @@ gem 'pry-rails'
 gem 'twitter'
 gem 'alchemy-api-rb', :require => 'alchemy_api'
 gem 'typhoeus'
+
+group :production do 
+	gem 'rails_12factor'
+end
