@@ -22,6 +22,28 @@
 	</div><!-- end of container -->
 </div> <!-- end of intro-section -->
 
+<!-- AJAX call ================================================ -->
+	<button id="proxy">Tweet Score with Proxy </button>
+	<div id="ajax_div"></div>
+
+	<script type="text/javascript">
+
+	$('#proxy').click(function(){
+		var request = $.ajax({
+		  url: "/get_price",
+		 	dataType: "json"
+		});
+
+		request.done(function(data){
+			console.log(data)
+			$('#ajax_div').text(data.LastPrice)
+		});
+	})
+
+	</script>
+
+<!-- AJAX call ================================================ -->
+
 <div id="chartdiv-gauge"></div>
 <div id="chartdiv-line"></div>
 
