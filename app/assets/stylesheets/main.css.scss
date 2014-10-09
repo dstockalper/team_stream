@@ -126,9 +126,16 @@ body{
 	font-family: Oswald; 
 	font-size: 2em;
 	font-weight: 300;
-	text-align: left;
+	text-align: center;
 	color: $subtitles;
 	text-transform: uppercase;
 	margin-bottom: 20px;
+}
+
+.icons span{
+    font-size: 50px;
+    color: $emphasis;
+    text-align: center;
+    margin: 0 auto;
 }
 
