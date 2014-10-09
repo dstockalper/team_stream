@@ -18,6 +18,10 @@ body{
 	font-family: Oswald;
 	text-transform: uppercase;
 }
+
+.navbar.navbar-default.navbar-fixed-top.dash {
+    border-bottom: 1px solid #28B0AD;
+}
 #about {
 	height: 1200px;
 	background-color: $light-gray-blue;
@@ -49,7 +53,7 @@ body{
 .intro-header{
     color: $shade;
     background-color: rgba(255, 255, 255, 0.8);
-    height: 40px;
+    height: 45px;
     margin-top: 0px;
     width: 110%;
     margin-left: -15px;
@@ -98,6 +102,12 @@ body{
     font-weight: 300;
     font-size: 2em;
     padding-top: 75px;
+}
+
+.wide-chart {
+    background-color: $subtitles;
+    height: 350px;
+    border: 5px solid white;
 }
 .sign{
 	margin: 70px 0;
