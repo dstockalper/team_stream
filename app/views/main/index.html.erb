@@ -22,6 +22,14 @@
 	</div><!-- end of container -->
 </div> <!-- end of intro-section -->
 
+
+	<button id="proxy">Tweet Score with Proxy </button>
+	<div id="ajax_div"></div>
+	<br>
+	<br>
+
+
+
 <div id="chartdiv-gauge"></div>
 <div id="chartdiv-line"></div>
 
@@ -82,3 +90,26 @@
 		$('[data-typer-targets]').typer();
 	});
 </script>
+
+// <!-- AJAX call ================================================ -->
+
+	// <script type="text/javascript">
+
+	$('#proxy').click(function(){
+		
+		var request = $.ajax({
+		  url: "/get_data",
+		 	dataType: "json"
+		});
+
+		request.done(function(data){
+			
+			$('#ajax_div').text(data[41].score)
+
+
+		});
+	})
+
+	// </script>
+
+// <!-- AJAX call ================================================ -->
