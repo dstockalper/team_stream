@@ -51,10 +51,13 @@ GEM
       dotenv (= 1.0.1)
     equalizer (0.0.9)
     erubis (2.7.0)
+    ethon (0.7.1)
+      ffi (>= 1.3.0)
     excon (0.40.0)
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.5)
     hike (1.2.3)
     http (0.6.2)
       http_parser.rb (~> 0.6.0)
@@ -142,6 +145,8 @@ GEM
       memoizable (~> 0.4.0)
       naught (~> 1.0)
       simple_oauth (~> 0.2.0)
+    typhoeus (0.6.9)
+      ethon (>= 0.7.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -168,4 +173,5 @@ DEPENDENCIES
   spring
   turbolinks
   twitter
+  typhoeus
   uglifier (>= 1.3.0)

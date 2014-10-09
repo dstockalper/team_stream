@@ -16,8 +16,10 @@
 //= require bootstrap-sprockets
 //= require jquery.typer.js
 //= require scroll.js
+//= require ajax_call.js
 //= require amcharts.js
 //= require serial.js
 //= require gauge.js
+
 //= require_tree .
 
