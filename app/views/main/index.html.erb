@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+<nav class="navbar navbar-default navbar-fixed-top dash" role="navigation"> 
 	<div class="container">
 		<div class="navbar-header">
 			<a href="#intro" class="navbar-brand">TeamStream</a>
@@ -48,8 +48,10 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-md-12 wide-chart">
 				<h3 class="intro-header">History</h3>
 				<div id="chartdiv-line"></div>
+			</div>
 			</div>
 			
 			
@@ -287,6 +289,8 @@
 			         "axisAlpha":0.2,
 			         "tickAlpha":0.2,
 			         "valueInterval":.5,
+			         "bottomTextColor" : "#fff",
+			         "axisColor" : "#fff", 
 			        "bands": [{
 			            "color": "#cc4748",
 			            "endValue": 0,
@@ -304,9 +308,13 @@
 			        "bottomText": "sentiment",
 			        "bottomTextYOffset": -1,
 			        "startValue": -1,
-			        "endValue": 1
+			        "endValue": 1,
+			        "bandOutlineColor" : "#fff"
+
 			    }],
-			    "arrows": [{}]
+			    "arrows": [{
+			    	"color" : "#fff"
+			    }]
 			});
 
 
