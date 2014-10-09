@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
 	<div class="container">
 		<div class="navbar-header">
-			<a href="#" class="navbar-brand">TeamStream</a>
+			<a href="#intro" class="navbar-brand">TeamStream</a>
 		</div>
 	
 		<ul class="nav navbar-nav">
@@ -12,24 +12,67 @@
 		</ul>
 	</div>
 </nav>
-<div class="intro-section">
+<div class="intro-section" id="intro">
 	<div class="container">
+		<h2 class="sign">TeamStream</h2>
 		<div class="hero">
-			<h2>49ers tweets:
-				<span data-typer-targets="suck,rule,are the worst team in the league,are going to win the SuperBowl"></span>.
-			</h2>
+			<div class="row">
+				<div class="col-md-4"><h3 class="intro-header">Your Team</h3></div>
+				<div class="col-md-8"><h3 class="intro-header">How they doing</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="main-team">
+						<%= image_tag "49ers.gif", :class => "logo" %>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<h2>The 49ers<br>
+						<span data-typer-targets="suck,rule,are the worst team in the league,are going to win the SuperBowl">are awesome</span>.
+					</h2>
+				</div>
+			</div>
+
+			<div class="row charts">
+				<div class="col-md-4 odd">
+					<h3 class="intro-header">Sentiment</h3>
+					<div id="chartdiv-gauge"></div>
+				</div>
+				<div class="col-md-4 even">
+					<h3 class="intro-header">Overall</h3>
+					<p class="chart-info">Positive</p>
+				</div>
+				<div class="col-md-4 odd">
+					<h3 class="intro-header">Latest Tweet</h3>
+					<p class="chart-info">49ers are my favorite</p>
+				</div>
+			</div>
+			<div class="row">
+				<h3 class="intro-header">History</h3>
+				<div id="chartdiv-line"></div>
+			</div>
+			
+			
 			
 		</div>
 	</div><!-- end of container -->
 </div> <!-- end of intro-section -->
-			<div></div>
-			<div id="my_team"></div>
-			<div id="chartdiv-gauge" style="display: block"></div>
-			<div id="chartdiv-line"></div>
+
+			
+
+
+
+		</div><!-- end of hero -->
+	</div><!-- end of container -->
+</div> <!-- end of intro-section -->
+
+<section>
+
 	<button id="proxy">Tweet Score with Proxy </button>
 	<div id="ajax_div"></div>
-	<br>
-	<br>
+</section>
+
+
 
 
 
@@ -37,7 +80,7 @@
 
 <div id="about">
 	<div class="container">
-		<h2 class="sign">TeamStream</h2>
+		
 		<div class="row icons">
 			<div class="col-md-4">
 				<span class="glyphicon glyphicon-cloud center-block"><span>
@@ -95,6 +138,10 @@
 
 
 
+
+  <!-- AJAX call ================================================ -->
+
+
 	<script type="text/javascript">
 
 	$(document).ready(function(){
@@ -142,6 +189,9 @@
 		});
 
 		request.done(function(data){
+			console.log(data)
+			$('#ajax_div').text(data[5].score)
+
 			
 			// LINE CHART START****************************************************
 			var chartData = generatechartData();
@@ -282,8 +332,12 @@
 
 	} //end of fire ajax_gauge_chart
 
+
 	</script>
 
 
 
+
+=======
+</script>
 
