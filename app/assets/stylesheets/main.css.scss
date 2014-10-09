@@ -23,7 +23,7 @@ body{
     border-bottom: 1px solid #28B0AD;
 }
 #about {
-	height: 1200px;
+	height: 700px;
 	background-color: $light-gray-blue;
 }
 
@@ -31,12 +31,9 @@ body{
 	height: 900px;
 }
 
-#tweets {
-	height: 900px;
-}
 
 #contact {
-	height: 900px;
+	height: 700px;
 }
 
 .intro-section {
@@ -73,7 +70,7 @@ body{
 }
 
 .hero h2{
-	font-size: 3.5em;
+	font-size: 1.5em;
 }
 
 .charts{
@@ -110,7 +107,7 @@ body{
     border: 5px solid white;
 }
 .sign{
-	margin: 70px 0;
+	margin: 90px 0;
 	font-family: 'Oswald', sans-serif;
 	font-size: 5em;
 	font-weight: 700;
@@ -177,6 +174,9 @@ body{
 	padding-top: 50px;
 	text-align: center;
 	margin-bottom: 40px;
+    font-family: Oswald;
+    text-transform: uppercase;
+    color: $shade;
 }
 
 .about {
@@ -192,6 +192,9 @@ body{
 	text-transform: uppercase;
 	margin-bottom: 20px;
 }
+.icons {
+    margin-top: 100px;
+}
 
 .icons span{
     font-size: 50px;
@@ -199,6 +202,7 @@ body{
     text-align: center;
     margin: 0 auto;
 }
+
 
 #ui_display {
     height: 200px;
@@ -215,5 +219,47 @@ body{
     margin: 20px;
     padding: 10px;
     cursor: move;
+}
+
+
+.line {
+    height: 1px;
+    margin: 0 auto;
+    display: block;
+    width: 150px; 
+    background-color: $shade
+}
+
+.about p{
+    padding: 20px;
+}
+.links{
+    margin-top: 100px;
+}
+.contact a{    
+    font-family: Oswald;
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+#github{
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+}
+
+#eddie{
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    
+}
+
+#doug {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
 }
 
