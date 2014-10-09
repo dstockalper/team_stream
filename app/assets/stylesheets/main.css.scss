@@ -203,6 +203,25 @@ body{
     margin: 0 auto;
 }
 
+
+#ui_display {
+    height: 200px;
+    width: 200px;
+    border: 3px solid red;
+    padding: 1px;
+}
+
+.ui_team {
+    height: 100px;
+    width: 100px;
+    border: 2px solid blue;
+    display: inline;
+    margin: 20px;
+    padding: 10px;
+    cursor: move;
+}
+
+
 .line {
     height: 1px;
     margin: 0 auto;
@@ -243,3 +262,4 @@ body{
     display: block;
     width: 200px;
 }
+

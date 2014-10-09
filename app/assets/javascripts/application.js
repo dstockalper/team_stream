@@ -21,5 +21,6 @@
 //= require amcharts.js
 //= require serial.js
 //= require gauge.js
+//= require jquery-ui.min.js
 //= require_tree .
 
